@@ -6,5 +6,7 @@
         int VagasTotais();
         bool EstacionamentoCheio();
         bool EstacionamentoVazio();
+        bool VagasMotoCheias();
+        int VagasVanOcupadas();
     }
 }
