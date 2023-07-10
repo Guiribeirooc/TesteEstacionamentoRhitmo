@@ -8,54 +8,53 @@ namespace EstacionamentoRhitmo.Controllers
     [Route("api/[controller]")]
     public class EstacionamentoController : ControllerBase
     {
-        private readonly IEstacionamentoService _estacionamentoService;
+        private readonly IEstacionamentoRepository _estacionamentoRepository;
 
-        public EstacionamentoController(IEstacionamentoService estacionamentoService)
+        public EstacionamentoController(IEstacionamentoRepository estacionamentoRepository)
         {
-            _estacionamentoService = estacionamentoService;
+            _estacionamentoRepository = estacionamentoRepository;
         }
 
         [HttpGet("vagas-restantes")]
-        public ActionResult<int> GetVagasRestantes()
+        public IActionResult GetVagasRestantes()
         {
-            int vagas = _estacionamentoService.CalcularVagasRestantes();
-            return Ok(vagas);
+            int vagasRestantes = _estacionamentoRepository.VagasRestantes();
+            return Ok(vagasRestantes);
         }
 
         [HttpGet("vagas-totais")]
-        public ActionResult<int> GetVagasTotais()
+        public IActionResult GetVagasTotais()
         {
-            int vagas = _estacionamentoService.CalcularVagasTotais();
-            return Ok(vagas);
+            int vagasTotais = _estacionamentoRepository.VagasTotais();
+            return Ok(vagasTotais);
         }
 
         [HttpGet("estacionamento-cheio")]
-        public ActionResult<bool> GetEstacionamentoCheio()
+        public IActionResult IsEstacionamentoCheio()
         {
-            bool cheio = _estacionamentoService.VerificarEstacionamentoCheio();
-            return Ok(cheio);
+            bool estacionamentoCheio = _estacionamentoRepository.EstacionamentoCheio();
+            return Ok(estacionamentoCheio);
         }
 
         [HttpGet("estacionamento-vazio")]
-        public ActionResult<bool> GetEstacionamentoVazio()
+        public IActionResult IsEstacionamentoVazio()
         {
-            bool vazio = _estacionamentoService.VerificarEstacionamentoVazio();
-            return Ok(vazio);
+            bool estacionamentoVazio = _estacionamentoRepository.EstacionamentoVazio();
+            return Ok(estacionamentoVazio);
         }
 
         [HttpGet("vagas-moto-cheias")]
-        public ActionResult<bool> GetVagasMotoCheias()
+        public IActionResult VagasMotoCheias()
         {
-            bool cheias = _estacionamentoService.VerificarVagasMotoCheias();
-            return Ok(cheias);
+            bool vagasMotoCheias = _estacionamentoRepository.VagasMotoCheias();
+            return Ok(vagasMotoCheias);
         }
 
         [HttpGet("vagas-van-ocupadas")]
-        public ActionResult<int> GetVagasVanOcupadas()
+        public IActionResult VagasVanOcupadas()
         {
-            int vagas = _estacionamentoService.ContarVagasVanOcupadas();
-            return Ok(vagas);
+            int vagasVanOcupadas = _estacionamentoRepository.VagasVanOcupadas();
+            return Ok(vagasVanOcupadas);
         }
-
     }
 }
