@@ -9,4 +9,3 @@ namespace EstacionamentoRhitmo.Interfaces
         List<Veiculo> ListarVeiculosEstacionados();
     }
 }
-

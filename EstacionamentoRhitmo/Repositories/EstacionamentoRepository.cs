@@ -22,7 +22,6 @@ namespace EstacionamentoRhitmo.Repositories
 
         public int VagasTotais()
         {
-            // Supondo que o total de vagas é a soma de todas as vagas para cada tipo de veículo
             return vagasMotoLivres + vagasCarroLivres + vagasGrandeLivres;
         }
 
@@ -43,7 +42,6 @@ namespace EstacionamentoRhitmo.Repositories
 
         public int VagasVanOcupadas()
         {
-            // Supondo que uma van ocupa três vagas de carro ou uma vaga grande
             return (VagasTotais() - VagasRestantes()) / 3;
         }
     }
