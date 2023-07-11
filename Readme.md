@@ -62,6 +62,7 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 "reservado" - indicador responsavel por mostrar a quantidade de vagas reservadas no estacionamento;
 
 Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o veiculo reservado na vaga:
+```json
 "ocupacao": [
     {
       "dataReserva": "2023-07-11T16:55:35.6376874-03:00",
@@ -72,6 +73,7 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
       "quantidade": 1
     }
   ]
+```
 
 **Glossário:**
 "dataReserva" - indicador que retorna a data e horário que foi efetuada a reserva da vaga;
