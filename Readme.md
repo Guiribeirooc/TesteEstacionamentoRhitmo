@@ -9,15 +9,15 @@ A Solução é capaz de incluir veículos em vagas de estacionamento, levando em
 - Uma van pode estacionarem uma vaga grande, ou nas vagas de carro, a mesma ocupando 3 vagas.
 
 ## Arquitetura do Projeto
-A solução foi feita em uma API em .NET 7, foi estruturada de forma simples, sendo separadas as responsabilidades por camada.
+A solução foi feita em uma API em .NET 7, estruturada de forma simples, separando as responsabilidades por camada.
 A API está documentada com Swagger.
-O sistema tem implementado dois endpoints: um para retornar a quantidade de vagas e o outro para fazer a reserva da mesma.
+O sistema tem implementado dois endpoints: um deles retorna a quantidade de vagas e o outro para fazer a reserva da mesma.
 
 ## Execução do código
-Para executar o teste, pode ser utilizado o próprio Swagger, inicializando o projeto.
+Para executar o teste do código, pode ser utilizado o próprio Swagger, inicializando o projeto.
 
 ## Endpoint - Obter Vagas
-O endpoint obter-vagas é responsável por retornar os indicadores das vagas do estacionamento. Essas informações são retornadas no formato JSON e obedecem os critérios estabelecidos para a construção da aplicação.
+O endpoint *obter-vagas* é responsável por retornar os indicadores das vagas do estacionamento. Essas informações são retornadas no formato JSON e obedecem os critérios estabelecidos para a construção da aplicação.
 
 ```json
 {
@@ -64,7 +64,7 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 | "tipoVagaDescricao"  | Descrição do indicador "tipoVaga";   |
 | "reservado"  | Indicador responsavel por mostrar a quantidade de vagas reservadas no esta   |
 
-Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o veiculo reservado na vaga:
+Ao ser feito uma reserva é retornado, em formato JSON, as informações sobre o veículo reservado na vaga:
 ```json
 "ocupacao": [
     {
@@ -89,7 +89,7 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 | "quantidade"  | Indicador que mostra a quantidade de vagas que foi ocupada na reserva. |
 
 ## Endpoint - Reservar vaga
-O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
+O endpoint *reservar* é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
 
 Payload:
 ```json
@@ -116,7 +116,7 @@ Caso a reserva seja feita com sucesso:
 }
 ```
 
-Caso tente adicionar um tipo de veiculo que não exista, lembrando que foi informado 3 tipos de veiculos:
+Caso tente adicionar um tipo de veículo que não exista, lembrando que foi informado 3 tipos de veiculos:
 ```json
 {
   "success": false,
