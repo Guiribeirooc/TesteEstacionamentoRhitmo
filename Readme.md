@@ -1,6 +1,6 @@
-Rhitmo Estacionamento
+##**Rhitmo Estacionamento**##
 
-O que a solução faz?
+**O que a solução faz?**
 A Solução é capaz de incluir veículos em vagas de estacionamento, levando em consideração alguns pontos:
 - O estacionamento pode acomodar motos, carros e vans;
 - O estacionamento possui vagas que comportam motos, carros e vagas grandes para vans;
@@ -8,12 +8,12 @@ A Solução é capaz de incluir veículos em vagas de estacionamento, levando em
 - Um carro pode estacionar em uma única vaga para carro ou em uma vaga grande;
 - Uma van pode estacionarem uma vaga grande, ou nas vagas de carro, a mesma ocupando 3 vagas.
 
-Arquitetura do Projeto:
+**Arquitetura do Projeto:**
 A solução foi feita em uma API em .NET 7, foi estruturada de forma simples, sendo separadas as responsabilidades por camada.
 A API está documentada com Swagger.
 O sistema tem implementado dois endpoints: um para retornar a quantidade de vagas e o outro para fazer a reserva da mesma.
 
-Execução do código:
+**Execução do código:**
 Para executar o teste, pode ser utilizado o próprio Swagger, inicializando o projeto.
 
 O endpoint obter-vagas é responsável por retornar os indicadores das vagas do estacionamento. Essas informações são retornadas no formato JSON e obedecem os critérios estabelecidos para a construção da aplicação.
@@ -49,7 +49,7 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
   "ocupacao": []
 }
 
-Glossário:
+**Glossário:**
 "disponivel" - quantidade de vagas que ainda estão disponíveis no estacionamento;
 "total" - quantidade total de vagas no estacionamento;
 "capacidade" indicador responsável por mostrar a capacidade atual do estacionamento (disponível, parcial e total);
@@ -59,7 +59,27 @@ Glossário:
 "tipoVagaDescricao" - descrição do indicador "tipoVaga";
 "reservado" - indicador responsavel por mostrar a quantidade de vagas reservadas no estacionamento;
 
-O endpoint reservar-vagas é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
+Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o veiculo reservado na vaga:
+"ocupacao": [
+    {
+      "dataReserva": "2023-07-11T16:55:35.6376874-03:00",
+      "tipoVeiculo": 1,
+      "tipoVeiculoDescricao": "Carro",
+      "tipoVaga": 2,
+      "tipoVagaDescricao": "Carro",
+      "quantidade": 1
+    }
+  ]
+
+**Glossário:**
+"dataReserva" - indicador que retorna a data e horário que foi efetuada a reserva da vaga;
+"tipoVeiculo" - retorna o indicador do tipo de veículo reservada na vaga;
+"tipoVeiculoDescricao" - descrição do indicador tipoVeiculo;
+"tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
+"tipoVagaDescricao" - descrição do indicador "tipoVaga";
+"quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
+
+O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
 {
   "tipoVeiculo": 1
 }
@@ -69,7 +89,7 @@ Tipos de Veiculo:
 2 - Moto
 3 - Van
 
-Mensagens de retorno da aplicação:
+**Mensagens de retorno da aplicação:**
 
 Caso a reserva seja feita com sucesso:
 
@@ -98,9 +118,3 @@ Caso não tenha mais vagas:
 A aplicação está configurada para iniciar com uma quantidade total de 30 vagas, sendo 10 de moto, 10 de carro e 10 vagas grandes. Esta configuração está mockada dentro da classe do repositório.
 
 Lembrando que os métodos foram construidos de modo estático para que a dinâmica entre consultar as vagas e realizar o cadastro funcione de forma perfeita, já que não há conexão com o banco de dados.
-
-
-
-
-
-

@@ -1,9 +1,10 @@
 ﻿using EstacionamentoRhitmo.Enums;
+using EstacionamentoRhitmo.Interfaces;
 using EstacionamentoRhitmo.Models;
 
 namespace EstacionamentoRhitmo.Repositories
 {
-    public class EstacionamentoRepository
+    public class EstacionamentoRepository : IEstacionamentoRepository
     {
         private static IndicadorVagaModel _indicadorVaga = new IndicadorVagaModel();
 
@@ -14,11 +15,6 @@ namespace EstacionamentoRhitmo.Repositories
             _indicadorVaga.Classificacao.Add(new ClassificacaoModel(ETipoVaga.Carro, 10));
             _indicadorVaga.Classificacao.Add(new ClassificacaoModel(ETipoVaga.Grande, 10));
             _indicadorVaga.Ocupacao = new List<OcupacaoModel>();
-        }
-
-        public void AdicionarVaga(ClassificacaoModel classificacao)
-        {
-            _indicadorVaga.Classificacao.Add(classificacao);
         }
 
         public IndicadorVagaModel ObterIndicadores()

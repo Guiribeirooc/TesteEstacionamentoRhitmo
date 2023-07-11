@@ -1,12 +1,13 @@
 ﻿using EstacionamentoRhitmo.Enums;
+using EstacionamentoRhitmo.Interfaces;
 using EstacionamentoRhitmo.Models;
 using EstacionamentoRhitmo.Repositories;
 
 namespace EstacionamentoRhitmo.Services
 {
-    public class EstacionamentoService
+    public class EstacionamentoService : IEstacionamentoService
     {
-        private readonly static EstacionamentoRepository _repository = new EstacionamentoRepository();
+        private readonly static IEstacionamentoRepository _repository = new EstacionamentoRepository();
 
         public ResponseModel Reservar(ETipoVeiculo tipoVeiculo)
         {

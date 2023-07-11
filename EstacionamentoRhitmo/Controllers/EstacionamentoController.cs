@@ -1,4 +1,5 @@
 ﻿using EstacionamentoRhitmo.Enums;
+using EstacionamentoRhitmo.Interfaces;
 using EstacionamentoRhitmo.Models;
 using EstacionamentoRhitmo.Repositories;
 using EstacionamentoRhitmo.Services;
@@ -10,8 +11,8 @@ namespace EstacionamentoRhitmo.Controllers
     [Route("api/[controller]")]
     public class EstacionamentoController : ControllerBase
     {
-        private static EstacionamentoRepository _repository = new EstacionamentoRepository();
-        private static EstacionamentoService _service = new EstacionamentoService();
+        private static IEstacionamentoRepository _repository = new EstacionamentoRepository();
+        private static IEstacionamentoService _service = new EstacionamentoService();
 
         [HttpGet("obter-vagas")]
         public IActionResult ObterVagas()
@@ -20,7 +21,7 @@ namespace EstacionamentoRhitmo.Controllers
             return Ok(result);
         }
 
-        [HttpPost("reservar-vagas")]
+        [HttpPost("reservar")]
         public IActionResult ReservarVagas([FromBody] ReservarRequest request)
         {
             var result = _service.Reservar(request.TipoVeiculo);
