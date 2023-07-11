@@ -18,6 +18,7 @@ Para executar o teste, pode ser utilizado o próprio Swagger, inicializando o pr
 
 O endpoint obter-vagas é responsável por retornar os indicadores das vagas do estacionamento. Essas informações são retornadas no formato JSON e obedecem os critérios estabelecidos para a construção da aplicação.
 
+```json
 {
   "disponivel": 30,
   "total": 30,
@@ -48,6 +49,7 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
   ],
   "ocupacao": []
 }
+```
 
 **Glossário:**
 "disponivel" - quantidade de vagas que ainda estão disponíveis no estacionamento;
