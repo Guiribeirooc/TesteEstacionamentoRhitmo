@@ -96,21 +96,22 @@ Tipos de Veiculo:
 ## Mensagens de retorno da aplicação
 
 Caso a reserva seja feita com sucesso:
-
+```json
 {
   "success": true,
   "data": null,
   "message": "Reserva realizada com sucesso."
 }
-
+```
 Caso tente adicionar um veiculo que não exista:
-
+```json
 {
   "success": false,
   "data": null,
   "message": "Tipo do veículo não corresponde."
 }
-
+```
+```json
 Caso não tenha mais vagas:
 	
 {
@@ -118,6 +119,7 @@ Caso não tenha mais vagas:
   "data": null,
   "message": "Reserva não foi realizada."
 }
+```
 
 A aplicação está configurada para iniciar com uma quantidade total de 30 vagas, sendo 10 de moto, 10 de carro e 10 vagas grandes. Esta configuração está mockada dentro da classe do repositório.
 
