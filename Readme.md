@@ -1,4 +1,4 @@
-##**Rhitmo Estacionamento**##
+##Rhitmo Estacionamento##
 
 **O que a solução faz?**
 A Solução é capaz de incluir veículos em vagas de estacionamento, levando em consideração alguns pontos:
