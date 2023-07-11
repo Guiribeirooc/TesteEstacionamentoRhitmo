@@ -105,7 +105,7 @@ Tipos de Veiculo:
 | 2  | Moto |
 | 3  | Van |
 
-## Mensagens de retorno do endpoint
+### Mensagens de retorno do endpoint
 
 Caso a reserva seja feita com sucesso:
 ```json
