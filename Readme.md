@@ -53,9 +53,18 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 ```
 
 **Glossário:**
+| "disponivel"  | quantidade de vagas que ainda estão disponíveis no estacionamento; |
+| "total"  | quantidade total de vagas no estacionamento;  |
+| "capacidade"  | indicador responsável por mostrar a capacidade atual do estacionamento (indisponível, parcial e total);   |
+| "capacidadeDescricao"  | descrição do indicador "capacidade";   |
+| "classificacao"  | objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas - disponiveis, reservadas e o total por tipo;   |
+| "tipoVaga"  | indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);   |
+| "tipoVagaDescricao"  | descrição do indicador "tipoVaga";   |
+| "reservado"  | indicador responsavel por mostrar a quantidade de vagas reservadas no esta   |
+
 - "disponivel" - quantidade de vagas que ainda estão disponíveis no estacionamento;
 - "total" - quantidade total de vagas no estacionamento;
-- "capacidade" indicador responsável por mostrar a capacidade atual do estacionamento (disponível, parcial e total);
+- "capacidade" - indicador responsável por mostrar a capacidade atual do estacionamento (indisponível, parcial e total);
 - "capacidadeDescricao" - descrição do indicador "capacidade";
 - "classificacao" - objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas - disponiveis, reservadas e o total por tipo;
 - "tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
