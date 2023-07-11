@@ -16,7 +16,7 @@ O sistema tem implementado dois endpoints: um para retornar a quantidade de vaga
 ## Execução do código
 Para executar o teste, pode ser utilizado o próprio Swagger, inicializando o projeto.
 
-## Reservar vaga
+## Endpoint - Obter Vagas
 O endpoint obter-vagas é responsável por retornar os indicadores das vagas do estacionamento. Essas informações são retornadas no formato JSON e obedecem os critérios estabelecidos para a construção da aplicação.
 
 ```json
@@ -84,6 +84,7 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 - "tipoVagaDescricao" - descrição do indicador "tipoVaga";
 - "quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
 
+## Endpoint - Reservar vaga
 O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
 
 Payload:
