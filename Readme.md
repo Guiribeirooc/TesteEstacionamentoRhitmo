@@ -55,14 +55,14 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 **Glossário:**
 | Campo  | Descrição |
 | :-------------------: | :--------------------------------------------------------------------------------------------------- |
-| "disponivel"  | quantidade de vagas que ainda estão disponíveis no estacionamento; |
-| "total"  | quantidade total de vagas no estacionamento;  |
-| "capacidade"  | indicador responsável por mostrar a capacidade atual do estacionamento (indisponível, parcial e total);   |
-| "capacidadeDescricao"  | descrição do indicador "capacidade";   |
-| "classificacao"  | objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas - disponiveis, reservadas e o total por tipo;   |
-| "tipoVaga"  | indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);   |
-| "tipoVagaDescricao"  | descrição do indicador "tipoVaga";   |
-| "reservado"  | indicador responsavel por mostrar a quantidade de vagas reservadas no esta   |
+| "disponivel"  | Quantidade de vagas que ainda estão disponíveis no estacionamento; |
+| "total"  | Quantidade total de vagas no estacionamento;  |
+| "capacidade"  | Indicador responsável por mostrar a capacidade atual do estacionamento (indisponível, parcial e total);   |
+| "capacidadeDescricao"  | Descrição do indicador "capacidade";   |
+| "classificacao"  | Objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas - disponiveis, reservadas e o total por tipo;   |
+| "tipoVaga"  | Indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);   |
+| "tipoVagaDescricao"  | Descrição do indicador "tipoVaga";   |
+| "reservado"  | Indicador responsavel por mostrar a quantidade de vagas reservadas no esta   |
 
 Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o veiculo reservado na vaga:
 ```json
@@ -81,12 +81,12 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 **Glossário:**
 | Campo  | Descrição |
 | :-------------------: | :--------------------------------------------------------------------------------------------------- |
-| "dataReserva"  | indicador que retorna a data e horário que foi efetuada a reserva da vaga; |
-| "tipoVeiculo  | retorna o indicador do tipo de veículo reservada na vaga; |
-| "tipoVeiculoDescricao"  | descrição do indicador tipoVeiculo; |
-| "tipoVaga"  | indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande); |
-| "tipoVagaDescricao"  | descrição do indicador "tipoVaga"; |
-| "quantidade"  | indicador que mostra a quantidade de vagas que foi ocupada na reserva. |
+| "dataReserva"  | Indicador que retorna a data e horário que foi efetuada a reserva da vaga; |
+| "tipoVeiculo  | Retorna o indicador do tipo de veículo reservada na vaga; |
+| "tipoVeiculoDescricao"  | Descrição do indicador tipoVeiculo; |
+| "tipoVaga"  | Indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande); |
+| "tipoVagaDescricao"  | Descrição do indicador "tipoVaga"; |
+| "quantidade"  | Indicador que mostra a quantidade de vagas que foi ocupada na reserva. |
 
 ## Endpoint - Reservar vaga
 O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
@@ -99,11 +99,13 @@ Payload:
 ```
 
 Tipos de Veiculo:
-1 - Carro
-2 - Moto
-3 - Van
+| Tipo  | Descrição |
+| :-------------------: | :--------------------- |
+| 1  | Carro |
+| 2  | Moto |
+| 3  | Van |
 
-## Mensagens de retorno da aplicação
+## Mensagens de retorno do endpoint
 
 Caso a reserva seja feita com sucesso:
 ```json
@@ -114,7 +116,7 @@ Caso a reserva seja feita com sucesso:
 }
 ```
 
-Caso tente adicionar um veiculo que não exista:
+Caso tente adicionar um tipo de veiculo que não exista, lembrando que foi informado 3 tipos de veiculos:
 ```json
 {
   "success": false,
