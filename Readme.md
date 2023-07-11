@@ -84,9 +84,13 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 - "quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
 
 O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
+
+Payload:
+```json
 {
   "tipoVeiculo": 1
 }
+```
 
 Tipos de Veiculo:
 1 - Carro
@@ -103,6 +107,7 @@ Caso a reserva seja feita com sucesso:
   "message": "Reserva realizada com sucesso."
 }
 ```
+
 Caso tente adicionar um veiculo que não exista:
 ```json
 {
@@ -111,6 +116,7 @@ Caso tente adicionar um veiculo que não exista:
   "message": "Tipo do veículo não corresponde."
 }
 ```
+
 ```json
 Caso não tenha mais vagas:
 	
