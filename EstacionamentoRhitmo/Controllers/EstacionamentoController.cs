@@ -1,4 +1,6 @@
-﻿using EstacionamentoRhitmo.Interfaces;
+﻿using EstacionamentoRhitmo.Enums;
+using EstacionamentoRhitmo.Models;
+using EstacionamentoRhitmo.Repositories;
 using EstacionamentoRhitmo.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,53 +10,21 @@ namespace EstacionamentoRhitmo.Controllers
     [Route("api/[controller]")]
     public class EstacionamentoController : ControllerBase
     {
-        private readonly IEstacionamentoRepository _estacionamentoRepository;
+        private static EstacionamentoRepository _repository = new EstacionamentoRepository();
+        private static EstacionamentoService _service = new EstacionamentoService();
 
-        public EstacionamentoController(IEstacionamentoRepository estacionamentoRepository)
+        [HttpGet("obter-vagas")]
+        public IActionResult ObterVagas()
         {
-            _estacionamentoRepository = estacionamentoRepository;
+            var result  = _repository.ObterIndicadores();
+            return Ok(result);
         }
 
-        [HttpGet("vagas-restantes")]
-        public IActionResult GetVagasRestantes()
+        [HttpPost("reservar-vagas")]
+        public IActionResult ReservarVagas([FromBody] ReservarRequest request)
         {
-            int vagasRestantes = _estacionamentoRepository.VagasRestantes();
-            return Ok(vagasRestantes);
-        }
-
-        [HttpGet("vagas-totais")]
-        public IActionResult GetVagasTotais()
-        {
-            int vagasTotais = _estacionamentoRepository.VagasTotais();
-            return Ok(vagasTotais);
-        }
-
-        [HttpGet("estacionamento-cheio")]
-        public IActionResult IsEstacionamentoCheio()
-        {
-            bool estacionamentoCheio = _estacionamentoRepository.EstacionamentoCheio();
-            return Ok(estacionamentoCheio);
-        }
-
-        [HttpGet("estacionamento-vazio")]
-        public IActionResult IsEstacionamentoVazio()
-        {
-            bool estacionamentoVazio = _estacionamentoRepository.EstacionamentoVazio();
-            return Ok(estacionamentoVazio);
-        }
-
-        [HttpGet("vagas-moto-cheias")]
-        public IActionResult VagasMotoCheias()
-        {
-            bool vagasMotoCheias = _estacionamentoRepository.VagasMotoCheias();
-            return Ok(vagasMotoCheias);
-        }
-
-        [HttpGet("vagas-van-ocupadas")]
-        public IActionResult VagasVanOcupadas()
-        {
-            int vagasVanOcupadas = _estacionamentoRepository.VagasVanOcupadas();
-            return Ok(vagasVanOcupadas);
+            var result = _service.Reservar(request.TipoVeiculo);
+            return Ok(result);
         }
     }
 }

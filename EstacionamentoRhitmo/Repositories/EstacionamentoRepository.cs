@@ -1,48 +1,35 @@
-﻿using EstacionamentoRhitmo.Interfaces;
+﻿using EstacionamentoRhitmo.Enums;
+using EstacionamentoRhitmo.Models;
 
 namespace EstacionamentoRhitmo.Repositories
 {
-    public class EstacionamentoRepository : IEstacionamentoRepository
+    public class EstacionamentoRepository
     {
-        private int vagasMotoLivres;
-        private int vagasCarroLivres;
-        private int vagasGrandeLivres;
+        private static IndicadorVagaModel _indicadorVaga = new IndicadorVagaModel();
 
-        public EstacionamentoRepository(int vagasMoto, int vagasCarro, int vagasGrande)
+        public EstacionamentoRepository()
         {
-            vagasMotoLivres = vagasMoto;
-            vagasCarroLivres = vagasCarro;
-            vagasGrandeLivres = vagasGrande;
+            _indicadorVaga.Classificacao = new List<ClassificacaoModel>();
+            _indicadorVaga.Classificacao.Add(new ClassificacaoModel(ETipoVaga.Moto, 10));
+            _indicadorVaga.Classificacao.Add(new ClassificacaoModel(ETipoVaga.Carro, 10));
+            _indicadorVaga.Classificacao.Add(new ClassificacaoModel(ETipoVaga.Grande, 10));
+            _indicadorVaga.Ocupacao = new List<OcupacaoModel>();
         }
 
-        public int VagasRestantes()
+        public void AdicionarVaga(ClassificacaoModel classificacao)
         {
-            return vagasMotoLivres + vagasCarroLivres + vagasGrandeLivres;
+            _indicadorVaga.Classificacao.Add(classificacao);
         }
 
-        public int VagasTotais()
+        public IndicadorVagaModel ObterIndicadores()
         {
-            return vagasMotoLivres + vagasCarroLivres + vagasGrandeLivres;
+            return _indicadorVaga;
         }
 
-        public bool EstacionamentoCheio()
+        public void Reservar(ETipoVeiculo tipoVeiculo, ETipoVaga tipoVaga, int quantidade)
         {
-            return vagasMotoLivres == 0 && vagasCarroLivres == 0 && vagasGrandeLivres == 0;
-        }
-
-        public bool EstacionamentoVazio()
-        {
-            return vagasMotoLivres == VagasTotais() && vagasCarroLivres == VagasTotais() && vagasGrandeLivres == VagasTotais();
-        }
-
-        public bool VagasMotoCheias()
-        {
-            return vagasMotoLivres == 0;
-        }
-
-        public int VagasVanOcupadas()
-        {
-            return (VagasTotais() - VagasRestantes()) / 3;
+            _indicadorVaga.Ocupacao.Add(new OcupacaoModel(DateTime.Now, tipoVeiculo, tipoVaga, quantidade));
+            _indicadorVaga.Classificacao.Where(x => x.TipoVaga.Equals(tipoVaga)).FirstOrDefault().Reservado += quantidade;
         }
     }
 }
