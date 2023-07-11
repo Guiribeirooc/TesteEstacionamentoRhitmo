@@ -1,6 +1,6 @@
 # Rhitmo Estacionamento
 
-**O que a solução faz?**
+## O que a solução faz?
 A Solução é capaz de incluir veículos em vagas de estacionamento, levando em consideração alguns pontos:
 - O estacionamento pode acomodar motos, carros e vans;
 - O estacionamento possui vagas que comportam motos, carros e vagas grandes para vans;
