@@ -119,9 +119,9 @@ Caso tente adicionar um veiculo que não exista:
 }
 ```
 
-```json
 Caso não tenha mais vagas:
-	
+```json
+
 {
   "success": true,
   "data": null,
