@@ -52,14 +52,14 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 ```
 
 **Glossário:**
-"disponivel" - quantidade de vagas que ainda estão disponíveis no estacionamento;
-"total" - quantidade total de vagas no estacionamento;
-"capacidade" indicador responsável por mostrar a capacidade atual do estacionamento (disponível, parcial e total);
-"capacidadeDescricao" - descrição do indicador "capacidade";
-"classificacao" - objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas disponiveis, reservadas e o total por tipo;
-"tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
-"tipoVagaDescricao" - descrição do indicador "tipoVaga";
-"reservado" - indicador responsavel por mostrar a quantidade de vagas reservadas no estacionamento;
+- "disponivel" - quantidade de vagas que ainda estão disponíveis no estacionamento;
+- "total" - quantidade total de vagas no estacionamento;
+- "capacidade" indicador responsável por mostrar a capacidade atual do estacionamento (disponível, parcial e total);
+- "capacidadeDescricao" - descrição do indicador "capacidade";
+- "classificacao" - objeto responsavel por retornar os indicadores por tipo de vaga, nele conseguimos visualizar a quantidade de vagas - disponiveis, reservadas e o total por tipo;
+- "tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
+- "tipoVagaDescricao" - descrição do indicador "tipoVaga";
+- "reservado" - indicador responsavel por mostrar a quantidade de vagas reservadas no estacionamento;
 
 Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o veiculo reservado na vaga:
 ```json
@@ -76,12 +76,12 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 ```
 
 **Glossário:**
-"dataReserva" - indicador que retorna a data e horário que foi efetuada a reserva da vaga;
-"tipoVeiculo" - retorna o indicador do tipo de veículo reservada na vaga;
-"tipoVeiculoDescricao" - descrição do indicador tipoVeiculo;
-"tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
-"tipoVagaDescricao" - descrição do indicador "tipoVaga";
-"quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
+- "dataReserva" - indicador que retorna a data e horário que foi efetuada a reserva da vaga;
+- "tipoVeiculo" - retorna o indicador do tipo de veículo reservada na vaga;
+- "tipoVeiculoDescricao" - descrição do indicador tipoVeiculo;
+- "tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
+- "tipoVagaDescricao" - descrição do indicador "tipoVaga";
+- "quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
 
 O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
 {
