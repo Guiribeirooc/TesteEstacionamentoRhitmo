@@ -8,7 +8,7 @@ A Solução é capaz de incluir veículos em vagas de estacionamento, levando em
 - Um carro pode estacionar em uma única vaga para carro ou em uma vaga grande;
 - Uma van pode estacionarem uma vaga grande, ou nas vagas de carro, a mesma ocupando 3 vagas.
 
-**Arquitetura do Projeto:**
+##Arquitetura do Projeto
 A solução foi feita em uma API em .NET 7, foi estruturada de forma simples, sendo separadas as responsabilidades por camada.
 A API está documentada com Swagger.
 O sistema tem implementado dois endpoints: um para retornar a quantidade de vagas e o outro para fazer a reserva da mesma.
