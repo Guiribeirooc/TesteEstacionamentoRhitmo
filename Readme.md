@@ -79,12 +79,14 @@ Ao ser feito uma reserva é retornado em formato JSON, as informações sobre o 
 ```
 
 **Glossário:**
-- "dataReserva" - indicador que retorna a data e horário que foi efetuada a reserva da vaga;
-- "tipoVeiculo" - retorna o indicador do tipo de veículo reservada na vaga;
-- "tipoVeiculoDescricao" - descrição do indicador tipoVeiculo;
-- "tipoVaga" - indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande);
-- "tipoVagaDescricao" - descrição do indicador "tipoVaga";
-- "quantidade" - indicador que mostra a quantidade de vagas que foi ocupada na reserva.
+| Campo  | Descrição |
+| :-------------------: | :--------------------------------------------------------------------------------------------------- |
+| "dataReserva"  | indicador que retorna a data e horário que foi efetuada a reserva da vaga; |
+| "tipoVeiculo  | retorna o indicador do tipo de veículo reservada na vaga; |
+| "tipoVeiculoDescricao"  | descrição do indicador tipoVeiculo; |
+| "tipoVaga"  | indicador responsavel por mostrar o tipo da vaga utilizada (moto, carro, grande); |
+| "tipoVagaDescricao"  | descrição do indicador "tipoVaga"; |
+| "quantidade"  | indicador que mostra a quantidade de vagas que foi ocupada na reserva. |
 
 ## Endpoint - Reservar vaga
 O endpoint reservar é responsável por cadastrar uma reserva de um tipo específico de veiculo, sendo passado em formato JSON no corpo da requisição. Seguindo os critérios estabelecidos é possivel fazer a reserva de 3 tipos de veiculos:
