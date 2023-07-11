@@ -53,6 +53,8 @@ O endpoint obter-vagas é responsável por retornar os indicadores das vagas do 
 ```
 
 **Glossário:**
+| Campo  | Descrição |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
 | "disponivel"  | quantidade de vagas que ainda estão disponíveis no estacionamento; |
 | "total"  | quantidade total de vagas no estacionamento;  |
 | "capacidade"  | indicador responsável por mostrar a capacidade atual do estacionamento (indisponível, parcial e total);   |
